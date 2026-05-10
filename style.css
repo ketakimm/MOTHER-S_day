@@ -1,0 +1,1076 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+
+}
+
+
+
+/* BODY */
+
+body{
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #ffd6e7,
+        #ffe8c7,
+        #d7f9ff,
+        #f7d6ff
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
+}
+
+
+
+/* HEART CURSOR */
+
+.cursor{
+
+    width:25px;
+    height:25px;
+
+    position:fixed;
+
+    background:red;
+
+    transform:rotate(-45deg);
+
+    pointer-events:none;
+
+    z-index:9999;
+}
+
+
+
+.cursor::before,
+.cursor::after{
+
+    content:'';
+
+    width:25px;
+    height:25px;
+
+    background:red;
+
+    border-radius:50%;
+
+    position:absolute;
+}
+
+
+
+.cursor::before{
+
+    top:-12px;
+    left:0;
+}
+
+
+
+.cursor::after{
+
+    left:12px;
+    top:0;
+}
+
+
+
+/* PAGES */
+
+.home-page,
+.gift-page,
+.final-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+
+
+/* HOME */
+
+.main-title,
+.gift-title{
+
+    font-size:4rem;
+
+    font-weight:bold;
+
+    background:linear-gradient(
+        to right,
+        hotpink,
+        orange,
+        deeppink,
+        purple
+    );
+
+    background-size:300%;
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:titleMove 4s linear infinite;
+}
+
+
+
+.home-text,
+.gift-subtitle{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+    color:#444;
+
+    max-width:700px;
+
+    line-height:1.7;
+}
+
+
+
+/* BUTTONS */
+
+.explore-btn,
+.next-btn{
+
+    margin-top:45px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        to right,
+        #ff4d88,
+        #ff9a44
+    );
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    transition:0.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+
+.explore-btn:hover,
+.next-btn:hover{
+
+    transform:scale(1.08);
+}
+
+
+
+/* GIFT PAGE */
+
+.gift-page{
+
+    display:none;
+}
+
+
+
+/* GIFT CONTAINER */
+
+.container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:60px;
+
+    margin-top:60px;
+}
+
+
+
+/* GIFT WRAPPER */
+
+.gift-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+
+
+/* GIFT BOX */
+
+.gift-box{
+
+    width:170px;
+
+    height:170px;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d88,
+        #ff85a2
+    );
+
+    border-radius:20px;
+
+    position:relative;
+
+    transition:0.4s;
+
+    box-shadow:0 12px 25px rgba(255,0,128,0.4);
+}
+
+
+
+.gift-box:hover{
+
+    transform:translateY(-10px) scale(1.05);
+}
+
+
+
+/* RIBBON */
+
+.gift-box::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:30px;
+
+    height:170px;
+
+    background:white;
+
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+
+
+.gift-box::after{
+
+    content:'';
+
+    position:absolute;
+
+    width:170px;
+
+    height:30px;
+
+    background:white;
+
+    top:50%;
+
+    transform:translateY(-50%);
+}
+
+
+
+.ribbon{
+
+    position:absolute;
+
+    top:-28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:55px;
+}
+
+
+
+/* MEMORY CARD */
+
+.memory-card{
+
+    width:320px;
+
+    padding:18px;
+
+    border-radius:28px;
+
+    margin-top:25px;
+
+    display:none;
+
+    animation:cardPop 0.9s ease;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+
+
+/* DIFFERENT CARD COLORS */
+
+.pink-card{
+    background:#fff0f5;
+}
+
+.purple-card{
+    background:#f7edff;
+}
+
+.orange-card{
+    background:#fff1de;
+}
+
+.peach-card{
+    background:#ffeef1;
+}
+
+.blue-card{
+    background:#e8fbff;
+}
+
+.sky-card{
+    background:#edf4ff;
+}
+
+
+
+/* IMAGE */
+
+.memory-card img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    margin-bottom:18px;
+}
+
+
+
+/* HEADING */
+
+.memory-card h2{
+
+    color:#ff4d88;
+
+    font-size:1.5rem;
+
+    margin-bottom:12px;
+}
+
+
+
+/* TEXT */
+
+.memory-card p{
+
+    color:#555;
+
+    font-size:1rem;
+
+    line-height:1.7;
+}
+
+
+
+/* SHOW CARD */
+
+.memory-card.show{
+
+    display:block;
+}
+
+
+
+/* FINAL PAGE */
+
+.final-page{
+
+    display:none;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+
+/* SPRINKLES */
+
+.sprinkles{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    radial-gradient(circle,#ff4d88 2px,transparent 2px),
+    radial-gradient(circle,#ffd700 2px,transparent 2px),
+    radial-gradient(circle,#00d4ff 2px,transparent 2px);
+
+    background-size:80px 80px;
+
+    animation:sprinkleMove 10s linear infinite;
+
+    opacity:0.6;
+}
+
+
+
+/* FLOWERS */
+
+.bouquet{
+
+    font-size:12rem;
+
+    z-index:2;
+
+    animation:float 2s infinite alternate;
+}
+
+
+
+/* LOVE CARD */
+
+.love-card{
+
+    z-index:2;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    margin-top:20px;
+
+    width:90%;
+
+    max-width:600px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+
+.love-card h1{
+
+    color:#ff2e7a;
+
+    font-size:3rem;
+}
+
+
+
+.love-card p{
+
+    margin-top:15px;
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:1.2rem;
+}
+/* EXIT BUTTON */
+
+/* EXIT BUTTON */
+
+.exit-btn{
+
+    margin-top:40px;
+
+    padding:18px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        to right,
+        #ff4d88,
+        #ff9966,
+        #ff66c4
+    );
+
+    background-size:300%;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    box-shadow:0 10px 25px rgba(255,0,128,0.35);
+
+    transition:0.4s;
+
+    animation:buttonGlow 4s linear infinite;
+}
+
+
+
+.exit-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 15px 35px rgba(255,0,128,0.45);
+}
+
+/* GOODBYE SCREEN */
+
+.goodbye-screen{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        -45deg,
+        #ffd6e7,
+        #ffe8c7,
+        #d7f9ff,
+        #f7d6ff
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+
+
+/* GOODBYE CONTENT */
+
+.goodbye-content{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+
+    animation:cardPop 1s ease;
+}
+
+
+
+.goodbye-content h1{
+
+    font-size:4rem;
+
+    background:linear-gradient(
+        to right,
+        hotpink,
+        orange,
+        deeppink,
+        purple
+    );
+
+    background-size:300%;
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:titleMove 4s linear infinite;
+}
+
+
+
+.goodbye-content p{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+    color:#555;
+
+    line-height:1.7;
+}
+
+
+
+/* BIG HEART */
+
+.big-heart{
+
+    margin-top:30px;
+
+    font-size:6rem;
+
+    animation:float 2s infinite alternate;
+}
+
+
+
+/* BUTTON ANIMATION */
+
+@keyframes buttonGlow{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+/* ANIMATIONS */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+
+@keyframes titleMove{
+
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:300%;
+    }
+
+}
+
+
+
+@keyframes cardPop{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        rotate(-12deg)
+        translateY(-80px)
+        scale(0.4);
+
+    }
+
+    60%{
+
+        transform:
+        rotate(5deg)
+        translateY(10px)
+        scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        rotate(0deg)
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+
+
+@keyframes float{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+
+@keyframes sprinkleMove{
+
+    from{
+        background-position:0 0;
+    }
+
+    to{
+        background-position:0 1000px;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+/* LAPTOPS */
+
+@media(max-width:1200px){
+
+    .container{
+
+        gap:40px;
+    }
+
+}
+
+
+
+/* TABLETS */
+
+@media(max-width:900px){
+
+    .main-title,
+    .gift-title{
+
+        font-size:3rem;
+    }
+
+
+
+    .home-text,
+    .gift-subtitle{
+
+        font-size:1.1rem;
+
+        padding:0 15px;
+    }
+
+
+
+    .memory-card{
+
+        width:280px;
+    }
+
+
+
+    .gift-box{
+
+        width:150px;
+        height:150px;
+    }
+
+
+
+    .gift-box::before{
+
+        height:150px;
+    }
+
+
+
+    .gift-box::after{
+
+        width:150px;
+    }
+
+
+
+    .bouquet{
+
+        font-size:9rem;
+    }
+
+
+
+    .love-card h1{
+
+        font-size:2.5rem;
+    }
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    body{
+
+        overflow-x:hidden;
+    }
+
+
+
+    .main-title,
+    .gift-title{
+
+        font-size:2.3rem;
+
+        line-height:1.3;
+    }
+
+
+
+    .home-text,
+    .gift-subtitle{
+
+        font-size:1rem;
+
+        padding:0 10px;
+
+        line-height:1.6;
+    }
+
+
+
+    .container{
+
+        gap:35px;
+    }
+
+
+
+    .gift-box{
+
+        width:130px;
+        height:130px;
+    }
+
+
+
+    .gift-box::before{
+
+        height:130px;
+
+        width:22px;
+    }
+
+
+
+    .gift-box::after{
+
+        width:130px;
+
+        height:22px;
+    }
+
+
+
+    .ribbon{
+
+        font-size:42px;
+
+        top:-22px;
+    }
+
+
+
+    .memory-card{
+
+        width:92vw;
+
+        padding:16px;
+    }
+
+
+
+    .memory-card h2{
+
+        font-size:1.25rem;
+    }
+
+
+
+    .memory-card p{
+
+        font-size:0.95rem;
+    }
+
+
+
+    .explore-btn,
+    .next-btn,
+    .exit-btn{
+
+        padding:15px 28px;
+
+        font-size:1rem;
+    }
+
+
+
+    .bouquet{
+
+        font-size:7rem;
+    }
+
+
+
+    .love-card{
+
+        padding:22px;
+    }
+
+
+
+    .love-card h1{
+
+        font-size:2rem;
+    }
+
+
+
+    .love-card p{
+
+        font-size:1rem;
+    }
+
+
+
+    .goodbye-content{
+
+        padding:30px 20px;
+    }
+
+
+
+    .goodbye-content h1{
+
+        font-size:2.5rem;
+    }
+
+
+
+    .goodbye-content p{
+
+        font-size:1rem;
+    }
+
+
+
+    .big-heart{
+
+        font-size:4rem;
+    }
+
+}
+/* HIDE HEART CURSOR ON MOBILE */
+
+@media(max-width:768px){
+
+    .cursor{
+
+        display:none;
+    }
+
+}
+/* TAP HEART EFFECT */
+
+.tap-heart{
+
+    position:fixed;
+
+    font-size:24px;
+
+    pointer-events:none;
+
+    animation:heartFloat 1s ease forwards;
+
+    z-index:9999;
+}
+
+
+
+/* HEART FLOAT ANIMATION */
+
+@keyframes heartFloat{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(0.5);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-20px)
+        scale(1.2);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(-50px)
+        scale(1);
+
+    }
+
+}

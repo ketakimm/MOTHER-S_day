@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mother's Day Surprise 💖</title>
+
+
+
+<meta name="description"
+content="A colorful interactive Mother's Day surprise website filled with memories, animations and love 💖">
+
+<meta property="og:title"
+content="Mother's Day Surprise 💖">
+
+<meta property="og:description"
+content="A colorful interactive Mother's Day surprise website filled with memories, animations and love 💖">
+
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+    <!-- HEART CURSOR -->
+
+    <div class="cursor"></div>
+
+
+
+    <!-- HOME PAGE -->
+
+    <section class="home-page" id="homePage">
+
+        <h1 class="main-title">
+            Happy Mother's Day Aai🌸
+        </h1>
+
+        <p class="home-text">
+            A tiny world filled with love, memories & surprises 💖
+        </p>
+
+        <button class="explore-btn" onclick="goToGifts()">
+
+            Click To Explore Gifts 🎁
+
+        </button>
+
+    </section>
+
+
+
+
+
+    <!-- GIFT PAGE -->
+
+    <section class="gift-page" id="giftPage">
+
+        <h1 class="gift-title">
+            Guess What...? 🎀
+        </h1>
+
+        <p class="gift-subtitle">
+            Click the magical gifts to unlock memories & love notes 💌
+        </p>
+
+
+
+        <div class="container">
+
+
+
+            <!-- CARD 1 -->
+
+            <div class="gift-wrapper">
+
+                <div class="gift-box" onclick="toggleCard(this)">
+
+                    <div class="ribbon">🎀</div>
+
+                </div>
+
+
+
+                <div class="memory-card pink-card">
+
+                    <img src="./images/image 1.jpg">
+
+                    <h2>
+                        The strongest team ❤️
+                    </h2>
+
+                    <p>
+                        Thank you for building a home filled with love,
+                        warmth and endless support 🌸
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="gift-wrapper">
+
+                <div class="gift-box" onclick="toggleCard(this)">
+
+                    <div class="ribbon">🌸</div>
+
+                </div>
+
+
+
+                <div class="memory-card purple-card">
+
+                    <img src="./images/image 2.jpg">
+
+                    <h2>
+                        My happiest smile 💕
+                    </h2>
+
+                    <p>
+                        From my first laugh to every little milestone,
+                        you were always beside me ✨
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="gift-wrapper">
+
+                <div class="gift-box" onclick="toggleCard(this)">
+
+                    <div class="ribbon">💖</div>
+
+                </div>
+
+
+
+                <div class="memory-card orange-card">
+
+                    <img src="./images/image 3.jpg">
+
+                    <h2>
+                        Little moments, forever memories 🌿
+                    </h2>
+
+                    <p>
+                        Every outing with you becomes a story
+                        I’ll cherish forever 💖
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- CARD 4 -->
+
+            <div class="gift-wrapper">
+
+                <div class="gift-box" onclick="toggleCard(this)">
+
+                    <div class="ribbon">✨</div>
+
+                </div>
+
+
+
+                <div class="memory-card peach-card">
+
+                    <img src="./images/image 4.jpg">
+
+                    <h2>
+                        The Youthfulness 🌸
+                    </h2>
+
+                    <p>
+                        No matter how much you age, they will call you my sister. ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- CARD 5 -->
+
+            <div class="gift-wrapper">
+
+                <div class="gift-box" onclick="toggleCard(this)">
+
+                    <div class="ribbon">🦋</div>
+
+                </div>
+
+
+
+                <div class="memory-card blue-card">
+
+                    <img src="./images/image5.jpg">
+
+                    <h2>
+                        Strength, grace & courage ✨
+                    </h2>
+
+                    <p>
+                        The natural leader, the responsible one. 💫
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- CARD 6 -->
+
+            <div class="gift-wrapper">
+
+                <div class="gift-box" onclick="toggleCard(this)">
+
+                    <div class="ribbon">🌷</div>
+
+                </div>
+
+
+
+                <div class="memory-card sky-card">
+
+                    <img src="./images/image 6.jpg">
+
+                    <h2>
+                        You make life beautiful 💐
+                    </h2>
+
+                    <p>
+                        Just like colors bring rangoli to life,
+                        your love brings happiness to ours ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <button class="next-btn" onclick="goToFinalPage()">
+
+            Final Surprise ➜
+
+        </button>
+
+    </section>
+
+
+
+
+
+    <!-- FINAL PAGE -->
+
+    <section class="final-page" id="finalPage">
+
+        <div class="sprinkles"></div>
+
+        <div class="bouquet">
+            💐
+        </div>
+
+        <div class="love-card">
+
+            <h1>
+                Love You Aai ❤️
+            </h1>
+
+            <p>
+                Thank you for every hug, every sacrifice,
+                every smile and every moment of love 🌸
+            </p>
+            <button class="exit-btn" onclick="exitWebsite()">
+
+                  Exit Surprise ✨
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
